@@ -2,20 +2,22 @@
 %define api_version 1
 %define libname %mklibname polkit-gtk %api_version %{libmajor}
 %define libname_devel %mklibname -d polkit-gtk %api_version
+%define polkit 0.95
 
 Summary: PolicyKit integration for the GNOME desktop
 Name: polkit-gnome
-Version: 0.94
-Release: %mkrel 2
+Version: 0.95
+Release: %mkrel 1
 License: LGPLv2+
 URL: http://www.freedesktop.org/wiki/Software/PolicyKit
 Group: System/Libraries
 Source0: http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk2-devel
-BuildRequires: polkit-1-devel >= 0.94
+BuildRequires: polkit-1-devel >= %polkit
 BuildRequires: intltool
 BuildRequires: gtk-doc
+BuildRequires: gobject-introspection-devel
 Provides: polkit-agent
 
 %description
@@ -54,7 +56,8 @@ Development documentation for polkit-gnome.
 
 %build
 %configure2_5x --enable-gtk-doc --disable-static
-%make
+#gw parallel build broken in 0.95
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -74,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %{libname}
 %defattr(-,root,root,-)
 %{_libdir}/lib*.so.%{libmajor}*
+%_libdir/girepository-1.0/PolkitGtk-1.0.typelib
 
 %files -n %{libname_devel}
 %defattr(-,root,root,-)
@@ -81,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/*
+%_datadir/gir-1.0/PolkitGtk-1.0.gir
 
 %files docs
 %defattr(-,root,root,-)
