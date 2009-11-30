@@ -18,6 +18,8 @@ BuildRequires: polkit-1-devel >= %polkit
 BuildRequires: intltool
 BuildRequires: gtk-doc
 BuildRequires: gobject-introspection-devel
+#gw for Gtk-2.0.gir
+BuildRequires: gir-repository
 Provides: polkit-agent
 
 %description
