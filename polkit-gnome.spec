@@ -7,7 +7,7 @@
 Summary: PolicyKit integration for the GNOME desktop
 Name: polkit-gnome
 Version: 0.96
-Release: %mkrel 2
+Release: %mkrel 3
 License: LGPLv2+
 URL: http://www.freedesktop.org/wiki/Software/PolicyKit
 Group: System/Libraries
@@ -19,8 +19,6 @@ BuildRequires: intltool
 BuildRequires: gtk-doc
 BuildRequires: gobject-introspection-devel
 BuildRequires: desktop-file-utils
-#gw for Gtk-2.0.gir
-BuildRequires: gir-repository
 Provides: polkit-agent
 
 %description
@@ -59,7 +57,6 @@ Development documentation for polkit-gnome.
 
 %build
 %configure2_5x --enable-gtk-doc --disable-static
-#gw parallel build broken in 0.95
 make
 
 %install
