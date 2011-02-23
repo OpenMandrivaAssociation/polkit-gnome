@@ -6,7 +6,7 @@
 
 Summary: PolicyKit integration for the GNOME desktop
 Name: polkit-gnome
-Version: 0.99
+Version: 0.100
 Release: %mkrel 1
 License: LGPLv2+
 URL: http://www.freedesktop.org/wiki/Software/PolicyKit
@@ -18,7 +18,6 @@ BuildRequires: polkit-1-devel >= %polkit
 BuildRequires: intltool
 BuildRequires: gtk-doc
 BuildRequires: gobject-introspection-devel
-BuildRequires: desktop-file-utils
 Provides: polkit-agent
 
 %description
@@ -63,10 +62,6 @@ make
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-desktop-file-install --dir=$RPM_BUILD_ROOT/%{_sysconfdir}/xdg/autostart/ --remove-only-show-in=GNOME  $RPM_BUILD_ROOT/%{_sysconfdir}/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-echo 'NotShowIn=KDE;' >>$RPM_BUILD_ROOT%{_sysconfdir}/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-desktop-file-validate $RPM_BUILD_ROOT%{_sysconfdir}/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-
 %find_lang polkit-gnome-1
 
 %clean
@@ -75,7 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f polkit-gnome-1.lang
 %defattr(-,root,root,-)
 %doc COPYING AUTHORS README
-%config(noreplace) %_sysconfdir/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
 %{_libexecdir}/polkit-gnome-authentication-agent-1
 
 %files -n %{libname}
