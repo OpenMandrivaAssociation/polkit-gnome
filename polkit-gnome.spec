@@ -6,7 +6,7 @@
 
 Summary: PolicyKit integration for the GNOME desktop
 Name: polkit-gnome
-Version: 0.100
+Version: 0.101
 Release: %mkrel 1
 License: LGPLv2+
 URL: http://www.freedesktop.org/wiki/Software/PolicyKit
