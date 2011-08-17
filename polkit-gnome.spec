@@ -6,12 +6,12 @@
 
 Summary: PolicyKit integration for the GNOME desktop
 Name: polkit-gnome
-Version: 0.101
-Release: %mkrel 2
+Version: 0.102
+Release: %mkrel 1
 License: LGPLv2+
 URL: http://www.freedesktop.org/wiki/Software/PolicyKit
 Group: System/Libraries
-Source0: http://hal.freedesktop.org/releases/%{name}-%{version}.tar.bz2
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk2-devel
 BuildRequires: polkit-1-devel >= %polkit
