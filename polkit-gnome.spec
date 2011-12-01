@@ -59,13 +59,13 @@ Development documentation for polkit-gnome.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang polkit-gnome-1
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f polkit-gnome-1.lang
 %defattr(-,root,root,-)
