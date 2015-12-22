@@ -1,3 +1,5 @@
+%define _disable_rebuild_configure 1
+
 Summary:	PolicyKit integration for the GNOME desktop
 Name:		polkit-gnome
 Version:	0.105
