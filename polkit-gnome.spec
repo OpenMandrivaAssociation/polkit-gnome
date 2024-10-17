@@ -5,7 +5,7 @@ Name:		polkit-gnome
 Version:	0.105
 Release:	15
 License:	LGPLv2+
-URL:		http://www.freedesktop.org/wiki/Software/PolicyKit
+URL:		https://www.freedesktop.org/wiki/Software/PolicyKit
 Group:		System/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/polkit-gnome/%{version}/%{name}-%{version}.tar.xz
 
