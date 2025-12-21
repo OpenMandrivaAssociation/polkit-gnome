@@ -9,6 +9,11 @@ URL:		https://www.freedesktop.org/wiki/Software/PolicyKit
 Group:		System/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/polkit-gnome/%{version}/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.6.2
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0.0
